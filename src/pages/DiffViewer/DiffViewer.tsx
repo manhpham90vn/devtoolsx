@@ -1,6 +1,6 @@
 import { diffLines } from "diff";
 import { Highlight, themes } from "prism-react-renderer";
-import { useState } from "react";
+import { useAppContext } from "../../context/AppContext";
 import "./DiffViewer.css";
 
 const LANGUAGES = [
@@ -23,10 +23,14 @@ interface DiffLine {
 }
 
 export function DiffViewer() {
-  const [leftText, setLeftText] = useState("");
-  const [rightText, setRightText] = useState("");
-  const [showDiff, setShowDiff] = useState(false);
-  const [language, setLanguage] = useState("json");
+  const { state, setDiffViewerState } = useAppContext();
+  const { leftText, rightText, showDiff, language } = state.diffViewer;
+
+  const setLeftText = (text: string) => setDiffViewerState({ leftText: text });
+  const setRightText = (text: string) =>
+    setDiffViewerState({ rightText: text });
+  const setShowDiff = (show: boolean) => setDiffViewerState({ showDiff: show });
+  const setLanguage = (lang: string) => setDiffViewerState({ language: lang });
 
   const computeDiff = (): { left: DiffLine[]; right: DiffLine[] } => {
     const changes = diffLines(leftText, rightText);

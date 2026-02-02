@@ -11,6 +11,7 @@ interface Tool {
 
 const TOOLS: Tool[] = [
   { id: "diff", name: "Diff Viewer", path: "/diff", icon: "⇄" },
+  { id: "json", name: "JSON Formatter", path: "/json-formatter", icon: "{ }" },
   // Add more tools here in the future
 ];
 
