@@ -1,0 +1,12 @@
+dist
+node_modules
+.git
+.vscode
+target
+coverage
+build
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
+*.log
+src-tauri
