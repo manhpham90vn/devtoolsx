@@ -56,7 +56,7 @@ export function Layout() {
         </nav>
 
         <div className="sidebar-footer">
-          {!collapsed && <span className="version">v0.1.0</span>}
+          {!collapsed && <span className="version">v0.4.0</span>}
         </div>
       </aside>
 

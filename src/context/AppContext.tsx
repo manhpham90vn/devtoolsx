@@ -24,8 +24,13 @@ interface TimestampState {
   // Panel 1: Timestamp to Date
   tsInput: string;
   tsOutput: string;
-  // Panel 2: Date to Timestamp
-  dateInput: string;
+  // Panel 2: Date to Timestamp - separate fields
+  dateYear: string;
+  dateMonth: string;
+  dateDay: string;
+  dateHour: string;
+  dateMinute: string;
+  dateSecond: string;
   dateOutput: string;
 }
 
@@ -71,7 +76,12 @@ const defaultState: AppState = {
   timestamp: {
     tsInput: "",
     tsOutput: "",
-    dateInput: "",
+    dateYear: new Date().getFullYear().toString(),
+    dateMonth: (new Date().getMonth() + 1).toString().padStart(2, "0"),
+    dateDay: new Date().getDate().toString().padStart(2, "0"),
+    dateHour: new Date().getHours().toString().padStart(2, "0"),
+    dateMinute: new Date().getMinutes().toString().padStart(2, "0"),
+    dateSecond: new Date().getSeconds().toString().padStart(2, "0"),
     dateOutput: "",
   },
 };
