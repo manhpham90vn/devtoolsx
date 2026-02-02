@@ -1,7 +1,8 @@
 .app-layout {
   display: flex;
-  min-height: 100vh;
+  height: 100vh;
   background-color: #1e1e1e;
+  overflow: hidden;
 }
 
 /* Sidebar */
@@ -157,4 +158,5 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  min-height: 0;
 }

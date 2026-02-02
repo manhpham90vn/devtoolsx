@@ -20,6 +20,8 @@ jobs:
         uses: Swatinem/rust-cache@v2
         with:
           workspaces: "./src-tauri -> target"
+          prefix-key: "check"
+          save-if: ${{ github.ref == 'refs/heads/main' }}
       - name: Install dependencies (Linux)
         run: |
           sudo apt-get update

@@ -79,7 +79,8 @@ jobs:
         uses: Swatinem/rust-cache@v2
         with:
           workspaces: "./src-tauri -> target"
-          key: ${{ matrix.target }}
+          prefix-key: "release-${{ matrix.target }}"
+          cache-on-failure: true
 
       - name: Install dependencies (Linux)
         if: matrix.os == 'ubuntu-latest'
