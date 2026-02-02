@@ -9,6 +9,9 @@ on:
 jobs:
   frontend-lint:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./devtoolsx
     steps:
       - uses: actions/checkout@v4
 
@@ -17,6 +20,7 @@ jobs:
         with:
           node-version: "24"
           cache: "npm"
+          cache-dependency-path: devtoolsx/package-lock.json
 
       - name: Install dependencies
         run: npm ci
@@ -28,7 +32,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./src-tauri
+        working-directory: ./devtoolsx/src-tauri
     steps:
       - uses: actions/checkout@v4
 
