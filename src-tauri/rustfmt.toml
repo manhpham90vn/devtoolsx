@@ -2,7 +2,5 @@ edition = "2021"
 newline_style = "Unix"
 tab_spaces = 2
 
-# Sort and group imports
-imports_granularity = "Crate"
-group_imports = "StdExternalCrate"
+# Sort imports (stable option only)
 reorder_imports = true
