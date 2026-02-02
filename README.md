@@ -1,6 +1,22 @@
 # DevToolsX
 
-DevToolsX is a browser extension that allows you to debug and analyze web applications.
+A collection of developer tools built with Tauri + React.
+
+## Features
+
+- **Diff Viewer** - Compare two texts side by side with syntax highlighting
+- **JSON Formatter** - Format, minify, and validate JSON
+- **Base64 Encoder/Decoder** - Encode and decode Base64 strings
+- **URL Encoder/Decoder** - Encode and decode URL components
+- **Timestamp Converter** - Convert between Unix timestamps and human-readable dates
+
+## Download
+
+Download the latest release from [GitHub Releases](https://github.com/manhpham90vn/devtoolsx/releases):
+
+- **Linux**: `.deb`, `.rpm`, `.AppImage`
+- **macOS**: `.dmg`
+- **Windows**: `.msi`, `.exe`
 
 ## Run Local Dev
 

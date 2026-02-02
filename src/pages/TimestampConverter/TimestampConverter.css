@@ -1,0 +1,288 @@
+.timestamp-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  background-color: #1e1e1e;
+  overflow: auto;
+}
+
+.timestamp-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background-color: #252526;
+  border-bottom: 1px solid #3c3c3c;
+  flex-shrink: 0;
+}
+
+.toolbar-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-action {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #3c3c3c;
+  color: #f6f6f6;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.btn-action:hover:not(:disabled) {
+  background-color: #4c4c4c;
+  transform: translateY(-1px);
+}
+
+.btn-action:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btn-action.btn-primary {
+  background-color: #0e639c;
+}
+
+.btn-action.btn-primary:hover:not(:disabled) {
+  background-color: #1177bb;
+}
+
+.btn-action.btn-danger {
+  background-color: #c72b2b;
+}
+
+.btn-action.btn-danger:hover:not(:disabled) {
+  background-color: #d83939;
+}
+
+/* Current Time Section */
+.current-time-section {
+  padding: 16px;
+  background-color: #252526;
+  border-bottom: 1px solid #3c3c3c;
+}
+
+.current-time-header {
+  font-size: 14px;
+  font-weight: 600;
+  color: #4fc3f7;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+
+.current-time-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.time-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px;
+  background-color: #1e1e1e;
+  border-radius: 6px;
+  border: 1px solid #3c3c3c;
+}
+
+.time-label {
+  font-size: 12px;
+  color: #8b8b8b;
+  text-transform: uppercase;
+}
+
+.time-value-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.time-value {
+  font-family: "Consolas", "Monaco", "Courier New", monospace;
+  font-size: 14px;
+  color: #f6f6f6;
+  word-break: break-all;
+  flex: 1;
+}
+
+.btn-copy-small {
+  padding: 4px 8px;
+  background-color: #3c3c3c;
+  color: #f6f6f6;
+  border: none;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.btn-copy-small:hover {
+  background-color: #0e639c;
+}
+
+.btn-copy-small.copied {
+  background-color: #16825d;
+}
+
+/* Converter Panels */
+.converter-panels {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  flex: 1;
+  background-color: #3c3c3c;
+  padding: 16px;
+  gap: 16px;
+  background-color: #1e1e1e;
+}
+
+.converter-panel {
+  background-color: #252526;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #3c3c3c;
+}
+
+.panel-header {
+  padding: 12px 16px;
+  background-color: #2d2d2d;
+  border-bottom: 1px solid #3c3c3c;
+}
+
+.panel-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #f6f6f6;
+}
+
+.panel-content {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.input-group,
+.output-group {
+  display: flex;
+  gap: 8px;
+}
+
+.converter-input,
+.converter-output {
+  flex: 1;
+  padding: 12px 16px;
+  background-color: #1e1e1e;
+  color: #f6f6f6;
+  border: 1px solid #3c3c3c;
+  border-radius: 6px;
+  font-family: "Consolas", "Monaco", "Courier New", monospace;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.converter-input:focus {
+  border-color: #0e639c;
+}
+
+.converter-output {
+  background-color: #2d2d2d;
+}
+
+.converter-input::placeholder,
+.converter-output::placeholder {
+  color: #6a6a6a;
+}
+
+.btn-convert {
+  padding: 12px 20px;
+  background-color: #0e639c;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.btn-convert:hover:not(:disabled) {
+  background-color: #1177bb;
+}
+
+.btn-convert:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btn-copy {
+  padding: 12px 16px;
+  background-color: #3c3c3c;
+  color: #f6f6f6;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-copy:hover:not(:disabled) {
+  background-color: #4c4c4c;
+}
+
+.btn-copy:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btn-copy.copied {
+  background-color: #16825d;
+}
+
+/* Scrollbar styling */
+.timestamp-container::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+.timestamp-container::-webkit-scrollbar-track {
+  background: #1e1e1e;
+}
+
+.timestamp-container::-webkit-scrollbar-thumb {
+  background: #424242;
+  border-radius: 6px;
+}
+
+.timestamp-container::-webkit-scrollbar-thumb:hover {
+  background: #4e4e4e;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .current-time-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .input-group,
+  .output-group {
+    flex-direction: column;
+  }
+
+  .btn-convert,
+  .btn-copy {
+    width: 100%;
+  }
+}

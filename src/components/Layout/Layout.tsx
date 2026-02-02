@@ -12,7 +12,9 @@ interface Tool {
 const TOOLS: Tool[] = [
   { id: "diff", name: "Diff Viewer", path: "/diff", icon: "⇄" },
   { id: "json", name: "JSON Formatter", path: "/json-formatter", icon: "{ }" },
-  // Add more tools here in the future
+  { id: "base64", name: "Base64", path: "/base64", icon: "🔐" },
+  { id: "url", name: "URL Encoder", path: "/url-encoder", icon: "🔗" },
+  { id: "timestamp", name: "Timestamp", path: "/timestamp", icon: "⏱" },
 ];
 
 export function Layout() {
