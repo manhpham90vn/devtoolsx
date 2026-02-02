@@ -1,7 +1,48 @@
-# Tauri + React + Typescript
+# DevToolsX
 
-This template should help get you started developing with Tauri, React and Typescript in Vite.
+DevToolsX is a browser extension that allows you to debug and analyze web applications.
 
-## Recommended IDE Setup
+## Run Local Dev
 
-- [VS Code](https://code.visualstudio.com/) + [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) + [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
+### Prerequisites
+
+- Ubuntu 24.04
+
+```shell
+sudo apt update
+sudo apt install libwebkit2gtk-4.1-dev \
+  build-essential \
+  curl \
+  wget \
+  file \
+  libxdo-dev \
+  libssl-dev \
+  libayatana-appindicator3-dev \
+  librsvg2-dev
+```
+
+- Rust
+
+```shell
+curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
+```
+
+- Node.js 24
+
+```shell
+nvm install 24
+```
+
+### Run
+
+- Install dependencies
+
+```shell
+npm install
+```
+
+- Run
+
+```shell
+npm run tauri dev
+```
