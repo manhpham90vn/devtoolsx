@@ -251,6 +251,119 @@
   background-color: #16825d;
 }
 
+/* Error Message */
+.error-message {
+  padding: 10px 14px;
+  background-color: rgba(199, 43, 43, 0.2);
+  border: 1px solid #c72b2b;
+  border-radius: 6px;
+  color: #ff6b6b;
+  font-size: 13px;
+}
+
+/* Result Grid */
+.result-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.result-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 10px 12px;
+  background-color: #1e1e1e;
+  border-radius: 6px;
+  border: 1px solid #3c3c3c;
+}
+
+.result-item.result-relative {
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, #2d2d2d 0%, #1e1e1e 100%);
+  border-color: #4fc3f7;
+}
+
+.result-label {
+  font-size: 11px;
+  color: #8b8b8b;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.result-value-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.result-value {
+  font-family: "Consolas", "Monaco", "Courier New", monospace;
+  font-size: 13px;
+  color: #f6f6f6;
+  word-break: break-all;
+  flex: 1;
+}
+
+.result-value-relative {
+  color: #4fc3f7;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+/* Date Picker Styling */
+.date-picker-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+}
+
+.date-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.date-field-label {
+  font-size: 11px;
+  color: #8b8b8b;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  text-align: center;
+}
+
+.date-field-input {
+  padding: 10px 8px;
+  background-color: #1e1e1e;
+  color: #f6f6f6;
+  border: 1px solid #3c3c3c;
+  border-radius: 6px;
+  font-family: "Consolas", "Monaco", "Courier New", monospace;
+  font-size: 14px;
+  text-align: center;
+  outline: none;
+  transition: border-color 0.2s;
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+.date-field-input::-webkit-outer-spin-button,
+.date-field-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+.date-field-input:focus {
+  border-color: #0e639c;
+}
+
+.btn-convert-full {
+  width: 100%;
+  margin-top: 8px;
+}
+
 /* Scrollbar styling */
 .timestamp-container::-webkit-scrollbar {
   width: 12px;
@@ -284,5 +397,19 @@
   .btn-convert,
   .btn-copy {
     width: 100%;
+  }
+
+  .date-picker-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .result-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .date-picker-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
