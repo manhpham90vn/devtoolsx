@@ -154,7 +154,7 @@ export function DiffViewer() {
           </button>
           <span className="diff-stats">
             <span className="stat-added">
-              +{left.filter((l) => l.type === "empty").length}
+              +{right.filter((l) => l.type === "added").length}
             </span>
             <span className="stat-removed">
               -{left.filter((l) => l.type === "removed").length}
