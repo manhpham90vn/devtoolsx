@@ -49,6 +49,16 @@ const formatDateWithTimezone = (date: Date) => {
   };
 };
 
+// Helper function to clamp value within range
+const clampValue = (value: string, min: number, max: number): string => {
+  if (value === "") return "";
+  const num = parseInt(value, 10);
+  if (isNaN(num)) return "";
+  if (num < min) return min.toString();
+  if (num > max) return max.toString();
+  return num.toString();
+};
+
 export function TimestampConverter() {
   const { state, setTimestampState } = useAppContext();
   const {
@@ -62,6 +72,28 @@ export function TimestampConverter() {
   } = state.timestamp;
   const [copiedId, setCopiedId] = useState<string | null>(null);
   const [currentTime, setCurrentTime] = useState(() => Date.now());
+
+  // Helper to update date field with validation
+  const updateDateField = (
+    field: string,
+    value: string,
+    min: number,
+    max: number,
+    padLength: number = 2,
+  ) => {
+    // Allow empty or partial input while typing
+    if (
+      value === "" ||
+      (value.length < padLength && parseInt(value, 10) <= max)
+    ) {
+      setTimestampState({ [field]: value });
+      return;
+    }
+    const clamped = clampValue(value, min, max);
+    const padded =
+      field === "dateYear" ? clamped : clamped.padStart(padLength, "0");
+    setTimestampState({ [field]: padded });
+  };
 
   // Parsed dates for conversion results
   const [tsToDateResult, setTsToDateResult] = useState<Date | null>(null);
@@ -432,7 +464,7 @@ export function TimestampConverter() {
                   className="date-field-input"
                   value={dateYear}
                   onChange={(e) =>
-                    setTimestampState({ dateYear: e.target.value })
+                    updateDateField("dateYear", e.target.value, 1970, 2099, 4)
                   }
                   placeholder="YYYY"
                   min="1970"
@@ -446,9 +478,7 @@ export function TimestampConverter() {
                   className="date-field-input"
                   value={dateMonth}
                   onChange={(e) =>
-                    setTimestampState({
-                      dateMonth: e.target.value.padStart(2, "0"),
-                    })
+                    updateDateField("dateMonth", e.target.value, 1, 12)
                   }
                   placeholder="MM"
                   min="1"
@@ -462,9 +492,7 @@ export function TimestampConverter() {
                   className="date-field-input"
                   value={dateDay}
                   onChange={(e) =>
-                    setTimestampState({
-                      dateDay: e.target.value.padStart(2, "0"),
-                    })
+                    updateDateField("dateDay", e.target.value, 1, 31)
                   }
                   placeholder="DD"
                   min="1"
@@ -478,9 +506,7 @@ export function TimestampConverter() {
                   className="date-field-input"
                   value={dateHour}
                   onChange={(e) =>
-                    setTimestampState({
-                      dateHour: e.target.value.padStart(2, "0"),
-                    })
+                    updateDateField("dateHour", e.target.value, 0, 23)
                   }
                   placeholder="HH"
                   min="0"
@@ -494,9 +520,7 @@ export function TimestampConverter() {
                   className="date-field-input"
                   value={dateMinute}
                   onChange={(e) =>
-                    setTimestampState({
-                      dateMinute: e.target.value.padStart(2, "0"),
-                    })
+                    updateDateField("dateMinute", e.target.value, 0, 59)
                   }
                   placeholder="MM"
                   min="0"
@@ -510,9 +534,7 @@ export function TimestampConverter() {
                   className="date-field-input"
                   value={dateSecond}
                   onChange={(e) =>
-                    setTimestampState({
-                      dateSecond: e.target.value.padStart(2, "0"),
-                    })
+                    updateDateField("dateSecond", e.target.value, 0, 59)
                   }
                   placeholder="SS"
                   min="0"
